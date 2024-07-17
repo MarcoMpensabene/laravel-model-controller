@@ -6,25 +6,25 @@
 @section('main-content')
 
     <main>
-         <h1>Movies List</h1>
+            <h1 class="text-center text-primary">Movies List</h1>
         {{-- @dump($moviesList) test for db elements--}}
-         <section class="container">
+        <section class="container">
             <div class="row">
                 @foreach ($moviesList as $movie)
-                <div class="card col-2 m-2">
+                <div class="card col-2 m-2 card-bg">
                     <div class="card-body ">
-                      <h5 class="card-title">{{$movie["title"]}}</h5>
-                      <h6 class="card-subtitle mb-2 text-body-secondary">{{$movie["original_title"]}}</h6>
-                      <p class="card-text">{{$movie["nationality"]}}</p>
-                      <p >{{$movie["date"]}}</p>
-                      <p >{{$movie["vote"]}}</p>
+                        <h5 class="card-title text-primary">{{$movie["title"]}}</h5>
+                        <h6 class="card-subtitle mb-4 text-body-secondary">{{$movie["original_title"]}}</h6>
+                        <p class="text-danger">Nationality : {{$movie["nationality"]}}</p>
+                        <p class="text-info-emphasis">Date : {{$movie["date"]}}</p>
+                        <p class="text-info-emphasis">Vote : {{$movie["vote"]}}</p>
                     </div>
-                  </div>
+                </div>
                 @endforeach
 
             </div>
 
-         </section>
+        </section>
     </main>
 
 
