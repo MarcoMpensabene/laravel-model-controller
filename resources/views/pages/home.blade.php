@@ -7,15 +7,23 @@
 
     <main>
          <h1>Movies List</h1>
-        @dump($moviesList)
-         <section>
-            <ul>
+        {{-- @dump($moviesList) test for db elements--}}
+         <section class="container">
+            <div class="row">
                 @foreach ($moviesList as $movie)
-                <li>
-                    {{$movie["title"]}}
-                </li>
+                <div class="card col-2 m-2">
+                    <div class="card-body ">
+                      <h5 class="card-title">{{$movie["title"]}}</h5>
+                      <h6 class="card-subtitle mb-2 text-body-secondary">{{$movie["original_title"]}}</h6>
+                      <p class="card-text">{{$movie["nationality"]}}</p>
+                      <p >{{$movie["date"]}}</p>
+                      <p >{{$movie["vote"]}}</p>
+                    </div>
+                  </div>
                 @endforeach
-            </ul>
+
+            </div>
+
          </section>
     </main>
 
